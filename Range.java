@@ -16,8 +16,7 @@ public class Range implements IntegerSequence {
     }
 
     public int length() {
-        // return end - start; // not sure if this is right
-        return end - current;
+        return end - start;
     }
 
     // When current is no longer a valid element in the range, it should return
