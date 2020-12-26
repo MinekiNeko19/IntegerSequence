@@ -82,8 +82,15 @@ public class ArraySequence implements IntegerSequence{
         ArraySequence b = new ArraySequence(a);
         System.out.println(b.length());
         for (int i = 0; i < 15; i++) {
-            System.out.print(b.currentIndex + " ");
-            System.out.println(b.next());
+            try {
+                System.out.print(b.currentIndex + " ");
+                System.out.println(b.next());
+            } catch (NoSuchElementException e) {
+                e.printStackTrace();
+                System.out.println("No more elements in the sequence. Reset to use.");
+                // System.out.println("Resetting for you.")
+                // b.reset();
+            }
         }
     }
 }
