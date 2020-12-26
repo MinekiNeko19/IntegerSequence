@@ -15,7 +15,7 @@ public class ArraySequence implements IntegerSequence{
     //Postcondition: The otherseq will be reset.
     //This constructor will copy ALL values of the `otherseq` into the data array.
     public ArraySequence(IntegerSequence otherseq){
-        data = new int[otherseq.length()+1];
+        data = new int[otherseq.length()];
         int count = 0;
         while (otherseq.hasNext()) {
             try {
@@ -32,8 +32,7 @@ public class ArraySequence implements IntegerSequence{
     }
 
     public boolean hasNext() {
-        if (data.length == currentIndex) return false;
-        return true;
+        return !(data.length==currentIndex);
     }
 
     public int next() {
@@ -64,13 +63,27 @@ public class ArraySequence implements IntegerSequence{
         // }
 
         // Demo 2
-        IntegerSequence r = new Range(10,20);
-        IntegerSequence as = new ArraySequence(r);
+        // IntegerSequence r = new Range(10,20);
+        // IntegerSequence as = new ArraySequence(r);
     
-        System.out.println("ArraySequence(seq):");
-        while(as.hasNext()){
-            System.out.print(as.next()+", ");
+        // System.out.println("ArraySequence(seq):");
+        // while(as.hasNext()){
+        //     System.out.print(as.next()+", ");
+        // }
+        // System.out.println();
+
+        // Checking ArraySequence(ArraySequence)
+        int[] range = new int[10];
+        for (int i = 0; i < range.length; i++) {
+            range[i] = i*2;
         }
-        System.out.println();
+        ArraySequence a = new ArraySequence(range);
+        System.out.println(a.length());
+        ArraySequence b = new ArraySequence(a);
+        System.out.println(b.length());
+        for (int i = 0; i < 15; i++) {
+            System.out.print(b.currentIndex + " ");
+            System.out.println(b.next());
+        }
     }
 }
