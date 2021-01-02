@@ -15,9 +15,10 @@ public class ArraySequence implements IntegerSequence{
     //Postcondition: The otherseq will be reset.
     //This constructor will copy ALL values of the `otherseq` into the data array.
     public ArraySequence(IntegerSequence otherseq){
-        data = new int[otherseq.length()];
+        data = new int[otherseq.length()+1];
         int count = 0;
         while (otherseq.hasNext()) {
+            System.out.println(otherseq.hasNext());
             try {
                 data[count] = otherseq.next();
                 count++;
@@ -73,24 +74,24 @@ public class ArraySequence implements IntegerSequence{
         // System.out.println();
 
         // Checking ArraySequence(ArraySequence)
-        int[] range = new int[10];
-        for (int i = 0; i < range.length; i++) {
-            range[i] = i*2;
-        }
-        ArraySequence a = new ArraySequence(range);
-        System.out.println(a.length());
-        ArraySequence b = new ArraySequence(a);
-        System.out.println(b.length());
-        for (int i = 0; i < 15; i++) {
-            try {
-                System.out.print(b.currentIndex + " ");
-                System.out.println(b.next());
-            } catch (NoSuchElementException e) {
-                e.printStackTrace();
-                System.out.println("No more elements in the sequence. Reset to use.");
-                // System.out.println("Resetting for you.")
-                // b.reset();
-            }
-        }
+        // int[] range = new int[10];
+        // for (int i = 0; i < range.length; i++) {
+        //     range[i] = i*2;
+        // }
+        // ArraySequence a = new ArraySequence(range);
+        // System.out.println(a.length());
+        // ArraySequence b = new ArraySequence(a);
+        // System.out.println(b.length());
+        // for (int i = 0; i < 15; i++) {
+        //     try {
+        //         System.out.print(b.currentIndex + " ");
+        //         System.out.println(b.next());
+        //     } catch (NoSuchElementException e) {
+        //         e.printStackTrace();
+        //         System.out.println("No more elements in the sequence. Reset to use.");
+        //         // System.out.println("Resetting for you.")
+        //         // b.reset();
+            // }
+        // }
     }
 }
