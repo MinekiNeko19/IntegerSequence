@@ -22,7 +22,7 @@ public class Range implements IntegerSequence {
     // When current is no longer a valid element in the range, it should return
     // false.
     public boolean hasNext() {
-        if (current <= end) {
+        if (current <= end) {   // could just be return current <= end;
             return true;
         }
         return false;
@@ -42,7 +42,7 @@ public class Range implements IntegerSequence {
     }
 
     public static void main(String[] args) {
-        IntegerSequence a = new Range(10, 15);
+        // IntegerSequence a = new Range(10, 15);
 
         // Testing constructor
         // System.out.println(a.start);
@@ -58,24 +58,24 @@ public class Range implements IntegerSequence {
         // } catch (NoSuchElementException e) {
         //     System.out.println("Out of range. Reset.");
         // }
-        IntegerSequence r = new Range(10,15);
-        while(r.hasNext()){
-            System.out.print(r.next());
-            if( r.hasNext() ){       
-                System.out.print( ", " );
-            }
-        }
-        System.out.println();
+        // IntegerSequence r = new Range(10,15);
+        // while(r.hasNext()){
+        //     System.out.print(r.next());
+        //     if( r.hasNext() ){       
+        //         System.out.print( ", " );
+        //     }
+        // }
+        // System.out.println();
 
         //Testing reset and length
-        System.out.println(r.length());
-        r.reset();
-        System.out.println(r.length());
-        while(r.hasNext()){
-            System.out.print(r.next());
-            if( r.hasNext() ){       
-                System.out.print( ", " );
-            }
-        }
+        // System.out.println(r.length());
+        // r.reset();
+        // System.out.println(r.length());
+        // while(r.hasNext()){
+        //     System.out.print(r.next());
+        //     if( r.hasNext() ){       
+        //         System.out.print( ", " );
+        //     }
+        // }
     }
 }
