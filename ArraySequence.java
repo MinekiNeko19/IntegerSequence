@@ -93,5 +93,8 @@ public class ArraySequence implements IntegerSequence{
         //         // b.reset();
             // }
         // }
+
+        // Range r = new Range(2,10);
+        // ArraySequence a = new ArraySequence(r);
     }
 }
